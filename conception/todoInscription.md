@@ -2,7 +2,7 @@
 ## JetonInscription
 ### attributs (+ getters & setters & constructeurs )
 - mail
-- mdp
+- mdp (hashé)
 - nom
 - date_naissance
 - jeton 
@@ -11,14 +11,18 @@
 - duree_jeton : default(5 minutes)
 
 ### setter perso
-- setDateExpiration()=> date_insertion + duree_jeton
+- setDateExpirationPerso()=> date_insertion + duree_jeton
+
+### constructeur
+- miantso setDateExpirationPerso
 
 
 ### méthodes
 #### Fonctionnalité: INSCRIPTION
 - non static insert(connection): miantso getDateExpiration atao anaty table jeton_inscription
-- isExpiredJeton(dateheure click)=> dateheure click > getDateExpiration()
+- genererJeton()
 - buildUrlInscription(jeton)
+- isExpiredJeton(dateheure click)=> dateheure click > getDateExpiration()
 - validerInscription()=> miantso isExpiredJeton, manamboatra objet utilisateur, dia manao insert utilisateur 
 
 
