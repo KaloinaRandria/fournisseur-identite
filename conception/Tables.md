@@ -1,10 +1,10 @@
 # jeton_inscription
-- id_jeton
 - mail
 - mdp (haché)
 - nom
 - date_naissance
 - jeton 
+- date_insertion
 - date_expiration 
 
 # utilisateur
