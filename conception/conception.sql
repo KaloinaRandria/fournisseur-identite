@@ -8,26 +8,28 @@ CREATE TABLE utilisateur(
    PRIMARY KEY(id)
 );
 
-CREATE TABLE pin(
+CREATE TABLE pin (
    id SERIAL,
    id_utilisateur INTEGER NOT NULL,
    pin INTEGER NOT NULL,
+   duree INTEGER NOT NULL, -- Durée de validité en heures
    date_insertion TIMESTAMP,
    date_expiration TIMESTAMP NOT NULL,
    PRIMARY KEY(id),
    FOREIGN KEY(id_utilisateur) REFERENCES utilisateur(id)
-
 );
 
-CREATE TABLE jeton(
+
+CREATE TABLE jeton (
    id SERIAL,
    jeton TEXT NOT NULL,
-   date_expiration TIMESTAMP NOT NULL,
+   duree INTEGER NOT NULL, -- Durée de validité en heures
    date_insertion TIMESTAMP NOT NULL,
-   id_utilisateur INTEGER NOT NULL,
+   date_expiration TIMESTAMP NOT NULL,
    PRIMARY KEY(id),
    FOREIGN KEY(id_utilisateur) REFERENCES utilisateur(id)
 );
+
 
 CREATE TABLE tentative_mdp_failed(
    id SERIAL,
