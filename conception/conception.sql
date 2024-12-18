@@ -23,7 +23,7 @@ CREATE TABLE pin (
 CREATE TABLE jeton (
    id SERIAL,
    jeton TEXT NOT NULL,
-   duree INTEGER NOT NULL, -- Durée de validité en heures
+   duree DOUBLE PRECISION NOT NULL, -- Durée de validité en heures
    date_insertion TIMESTAMP NOT NULL,
    date_expiration TIMESTAMP NOT NULL,
    PRIMARY KEY(id),
