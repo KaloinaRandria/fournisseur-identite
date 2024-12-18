@@ -20,7 +20,7 @@ class Jeton
     #[ORM\Embedded(class: ExpirationUtil::class)]
     private ExpirationUtil $expirationUtil;
 
-    #[ORM\Column(type: "integer")]
+    
     private int $defaultDureeJeton;
 
     public function __construct(int $defaultDureeJeton)
