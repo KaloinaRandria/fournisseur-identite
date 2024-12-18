@@ -4,9 +4,8 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * @ORM\Entity(repositoryClass="App\Repository\JetonInscriptionRepository")
- */
+#[ORM\Entity]
+#[ORM\Table(name: "jeton_inscription")]
 class JetonInscription
 {
     #[ORM\Id]

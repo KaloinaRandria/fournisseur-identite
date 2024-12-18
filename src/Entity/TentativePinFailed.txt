@@ -4,9 +4,8 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * @ORM\Entity(repositoryClass="App\Repository\TentativePinFailedRepository")
- */
+#[ORM\Entity]
+#[ORM\Table(name: "tentative_pin_failed")]
 class TentativePinFailed
 {
     #[ORM\Id]

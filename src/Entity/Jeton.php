@@ -6,9 +6,8 @@ use App\Util\ExpirationUtil;
 use App\Util\TokenGeneratorUtil;
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * @ORM\Entity(repositoryClass="App\Repository\JetonRepository")
- */
+#[ORM\Entity]
+#[ORM\Table(name: "jeton")]
 class Jeton
 {
     #[ORM\Id]
@@ -22,10 +21,13 @@ class Jeton
     #[ORM\Embedded(class: ExpirationUtil::class)]
     private ExpirationUtil $expirationUtil;
 
-    public function __construct(int $duree = $defaultDureeJeton)
+    #[ORM\Column(type: "integer")]
+    private int $defaultDureeJeton;
+
+    public function __construct(int $defaultDureeJeton)
     {
-        $this->expirationUtil = (new ExpirationUtil())
-            ->setDuree($duree)
+        $this->expirationUtil = (new ExpirationUtil($defaultDureeJeton))
+            ->setDuree($defaultDureeJeton)
             ->calculerDateExpiration(); // Automatiquement définir la date d'expiration
 
         $this->jeton = TokenGeneratorUtil::generateToken();
