@@ -1,0 +1,9 @@
+E:\GitHub\fournisseur-identite>php bin/console make:migration
+PHP Deprecated:  ini_set(): assert.warning INI setting is deprecated in E:\GitHub\fournisseur-identite\vendor\symfony\runtime\Internal\BasicErrorHandler.php on line 35
+
+Deprecated: ini_set(): assert.warning INI setting is deprecated in E:\GitHub\fournisseur-identite\vendor\symfony\runtime\Internal\BasicErrorHandler.php on line 35
+
+In MappingException.php line 26:
+
+  The class 'App\Util\ExpirationUtil' was not found in the chain configured namespaces App\Entity  
+
