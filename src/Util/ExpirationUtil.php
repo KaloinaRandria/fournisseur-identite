@@ -63,15 +63,17 @@ class ExpirationUtil
         if ($this->dateInsertion === null) {
             $this->dateInsertion = new \DateTime(); // Date actuelle si non définie
         }
-
-        // Cloner la date d'insertion pour ne pas la modifier directement
-        $expirationDate = clone $this->dateInsertion;
-        
-        // Ajouter la durée en heures à la date d'insertion
-        $expirationDate->add(new \DateInterval('PT' . $this->duree . 'H')); 
-
-        return $expirationDate;
+    
+        // Convertir la date d'insertion en timestamp
+        $timestampInsertion = $this->dateInsertion->getTimestamp();
+    
+        // Ajouter la durée en secondes (duree en heures * 3600 secondes par heure)
+        $timestampExpiration = $timestampInsertion + ($this->duree * 3600);
+    
+        // Créer une nouvelle instance de \DateTimeImmutable à partir du timestamp
+        return (new \DateTimeImmutable())->setTimestamp($timestampExpiration);
     }
+    
 
     public function getDuree(): int
     {
