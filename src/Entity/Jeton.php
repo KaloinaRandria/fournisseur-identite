@@ -20,13 +20,13 @@ class Jeton
     #[ORM\Embedded(class: ExpirationUtil::class)]
     private ExpirationUtil $expirationUtil;
 
-    #[ORM\Column(type: "integer")]
+    
     private int $defaultDureeJeton;
 
-    public function __construct(int $defaultDureeJeton)
+    public function __construct()
     {
-        $this->expirationUtil = (new ExpirationUtil($defaultDureeJeton))
-            ->setDuree($defaultDureeJeton)
+        $this->expirationUtil = (new ExpirationUtil($this->defaultDureeJeton))
+            ->setDuree($this->defaultDureeJeton)
             ->calculerDateExpiration(); // Automatiquement définir la date d'expiration
 
         $this->jeton = TokenGeneratorUtil::generateToken();
