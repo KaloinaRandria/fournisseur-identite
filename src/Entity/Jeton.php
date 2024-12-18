@@ -23,10 +23,10 @@ class Jeton
     
     private int $defaultDureeJeton;
 
-    public function __construct(int $defaultDureeJeton)
+    public function __construct()
     {
-        $this->expirationUtil = (new ExpirationUtil($defaultDureeJeton))
-            ->setDuree($defaultDureeJeton)
+        $this->expirationUtil = (new ExpirationUtil($this->defaultDureeJeton))
+            ->setDuree($this->defaultDureeJeton)
             ->calculerDateExpiration(); // Automatiquement définir la date d'expiration
 
         $this->jeton = TokenGeneratorUtil::generateToken();

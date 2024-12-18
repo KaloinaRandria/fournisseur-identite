@@ -18,6 +18,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use PHPMailer\PHPMailer\PHPMailer;
 use App\Service\JetonService;
+use App\Service\MailService;
 
 class InscriptionController extends AbstractController
 {
@@ -26,7 +27,7 @@ class InscriptionController extends AbstractController
     private $jetonService;
 
     public function __construct(
-        EmailService $emailService,
+        MailService $emailService,
         JetonService $jetonService
     ) {
         $this->emailService = $emailService;
