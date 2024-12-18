@@ -1,8 +1,8 @@
 {
     "nom": "Dupont",
     "dateNaissance": "1990-01-01",
-    "email": "dupont@example.com",
-    "motDePasse": "123456",
+    "email": "h1hedy2@gmail.com",
+    "motDePasse": "12345",
     "dureeJeton": 60
 }
 
