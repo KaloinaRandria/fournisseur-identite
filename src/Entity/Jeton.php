@@ -22,7 +22,7 @@ class Jeton
     #[ORM\Embedded(class: ExpirationUtil::class)]
     private ExpirationUtil $expirationUtil;
 
-    public function __construct(int $duree = 24)
+    public function __construct(int $duree = $defaultDureeJeton)
     {
         $this->expirationUtil = (new ExpirationUtil())
             ->setDuree($duree)

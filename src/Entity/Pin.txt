@@ -25,9 +25,13 @@ class Pin
     #[ORM\JoinColumn(nullable: false)]
     private Utilisateur $utilisateur;
 
-    public function __construct()
+    public function __construct(int $duree = $defaultDureePin)
     {
-        $this->expirationUtil = new ExpirationUtil();
+            $this->expirationUtil = (new ExpirationUtil())
+            ->setDuree($duree)
+            ->calculerDateExpiration(); // Automatiquement définir la date d'expiration
+
+        $this->jeton = TokenGeneratorUtil::generateToken();
     }
 
     public function getId(): int

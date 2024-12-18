@@ -70,7 +70,8 @@ class InscriptionController extends AbstractController
             $hashedPassword = HasherUtil::hashPassword($data['motDePasse']);
     
             // Créer un objet Jeton avec durée par défaut
-            $jeton = $this->jetonService->createJeton();
+            // $jeton = $this->jetonService->createJeton();
+            $jeton = new Jeton();
     
             // Insérer le jeton dans la base
             $entityManager->getRepository(Jeton::class)->insertJeton($jeton);  // Utilisation d'EntityManager pour insérer
