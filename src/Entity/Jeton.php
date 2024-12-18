@@ -2,7 +2,6 @@
 
 namespace App\Entity;
 
-use App\Util\ExpirationUtil;
 use App\Util\TokenGeneratorUtil;
 use Doctrine\ORM\Mapping as ORM;
 

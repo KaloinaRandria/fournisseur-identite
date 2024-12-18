@@ -7,7 +7,7 @@ use App\Entity\JetonInscription;
 use App\Entity\Utilisateur;
 use App\Repository\JetonInscriptionRepository;
 use App\Repository\JetonRepository;
-use App\Util\ExpirationUtil;
+use App\Entity\ExpirationUtil;
 use App\Util\HasherUtil;
 use App\Util\TokenGeneratorUtil;
 use App\Util\MailUtil;

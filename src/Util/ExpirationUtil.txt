@@ -4,9 +4,7 @@ namespace App\Util;
 
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * @ORM\Embeddable
- */
+#[ORM\Embeddable]
 class ExpirationUtil
 {
     #[ORM\Column(type: "datetime", name: "date_insertion", nullable: false)]
