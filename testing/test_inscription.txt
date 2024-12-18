@@ -1,0 +1,46 @@
+{
+    "nom": "Dupont",
+    "dateNaissance": "1990-01-01",
+    "email": "dupont@example.com",
+    "motDePasse": "123456",
+    "dureeJeton": 60
+}
+
+
+{
+    "status": "success",
+    "data": {
+        "message": "Veuillez vérifier votre e-mail pour confirmer votre inscription."
+    }
+}
+
+{
+    "status": "error",
+    "data": null,
+    "error": {
+        "code": 409,
+        "message": "Cet email est déjà utilisé."
+    }
+}
+
+
+
+// confimation
+{
+    "status": "success",
+    "data": {
+        "message": "Inscription confirmée avec succès."
+    }
+}
+
+
+{
+    "status": "error",
+    "data": null,
+    "error": {
+        "code": 404,
+        "message": "Jeton d'inscription introuvable."
+    }
+}
+
+
